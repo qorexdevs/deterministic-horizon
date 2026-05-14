@@ -1,0 +1,62 @@
+# Permutation Task Configuration
+# ===============================
+
+task:
+  name: permutation
+  description: "Permutation puzzle with swap, rotate, and reverse operations"
+  
+  # State space parameters
+  state_size: 5  # Number of elements [0, 1, 2, 3, 4]
+  
+  # Available operations
+  operators:
+    - swap_01
+    - swap_12
+    - swap_23
+    - swap_34
+    - rotate_left
+    - rotate_right
+    - reverse
+  
+  # Instance generation
+  generation:
+    min_depth: 5
+    max_depth: 50
+    depth_step: 5
+    instances_per_depth: 100
+    solver: bfs  # bfs or a_star
+    max_solver_time: 60  # seconds per instance
+  
+  # Prompt settings
+  prompt:
+    format: structured  # structured or natural
+    include_example: true
+    example_depth: 3
+  
+  # Tool definitions for C3 condition
+  tools:
+    apply_operation:
+      description: "Apply an operation to the current state"
+      parameters:
+        operation:
+          type: string
+          enum: ["swap_01", "swap_12", "swap_23", "swap_34", 
+                 "rotate_left", "rotate_right", "reverse"]
+    
+    verify_state:
+      description: "Check if current state matches target"
+      parameters:
+        state:
+          type: array
+          items:
+            type: integer
+    
+    get_current_state:
+      description: "Get the current permutation state"
+      parameters: {}
+  
+  # Evaluation settings
+  evaluation:
+    exact_match: true  # Require exact state match
+    partial_credit: false  # No partial credit for close solutions
+    max_steps: 100  # Maximum allowed steps

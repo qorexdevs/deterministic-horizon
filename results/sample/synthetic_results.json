@@ -1,0 +1,1262 @@
+[
+  {
+    "instance_id": "b69b5dd844d0",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 28,
+    "correct": false
+  },
+  {
+    "instance_id": "b69b5dd844d0",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 28,
+    "correct": true
+  },
+  {
+    "instance_id": "547361aee249",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 36,
+    "correct": true
+  },
+  {
+    "instance_id": "547361aee249",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 36,
+    "correct": true
+  },
+  {
+    "instance_id": "05df121988a6",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 16,
+    "correct": true
+  },
+  {
+    "instance_id": "05df121988a6",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 16,
+    "correct": true
+  },
+  {
+    "instance_id": "aaf4a74f41d0",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 4,
+    "correct": true
+  },
+  {
+    "instance_id": "aaf4a74f41d0",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 4,
+    "correct": true
+  },
+  {
+    "instance_id": "0a6bd812aafc",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 12,
+    "correct": true
+  },
+  {
+    "instance_id": "0a6bd812aafc",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 12,
+    "correct": true
+  },
+  {
+    "instance_id": "c92f6bac8582",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 8,
+    "correct": true
+  },
+  {
+    "instance_id": "c92f6bac8582",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 8,
+    "correct": true
+  },
+  {
+    "instance_id": "911654cb1bae",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 12,
+    "correct": true
+  },
+  {
+    "instance_id": "911654cb1bae",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 12,
+    "correct": true
+  },
+  {
+    "instance_id": "a0dfd00096c1",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 36,
+    "correct": false
+  },
+  {
+    "instance_id": "a0dfd00096c1",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 36,
+    "correct": true
+  },
+  {
+    "instance_id": "1b57a901d57a",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 28,
+    "correct": false
+  },
+  {
+    "instance_id": "1b57a901d57a",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 28,
+    "correct": true
+  },
+  {
+    "instance_id": "f5e11a677fa1",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 40,
+    "correct": false
+  },
+  {
+    "instance_id": "f5e11a677fa1",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 40,
+    "correct": true
+  },
+  {
+    "instance_id": "58ac29412b57",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 28,
+    "correct": true
+  },
+  {
+    "instance_id": "58ac29412b57",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 28,
+    "correct": true
+  },
+  {
+    "instance_id": "9b9b62232014",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 12,
+    "correct": true
+  },
+  {
+    "instance_id": "9b9b62232014",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 12,
+    "correct": true
+  },
+  {
+    "instance_id": "c76bd849d939",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 28,
+    "correct": true
+  },
+  {
+    "instance_id": "c76bd849d939",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 28,
+    "correct": true
+  },
+  {
+    "instance_id": "6ab210ce2d90",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 24,
+    "correct": false
+  },
+  {
+    "instance_id": "6ab210ce2d90",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 24,
+    "correct": true
+  },
+  {
+    "instance_id": "7b7e9b3c34c3",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 32,
+    "correct": false
+  },
+  {
+    "instance_id": "7b7e9b3c34c3",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 32,
+    "correct": true
+  },
+  {
+    "instance_id": "12c3611dd677",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 4,
+    "correct": true
+  },
+  {
+    "instance_id": "12c3611dd677",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 4,
+    "correct": true
+  },
+  {
+    "instance_id": "df2443d5f671",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 36,
+    "correct": false
+  },
+  {
+    "instance_id": "df2443d5f671",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 36,
+    "correct": true
+  },
+  {
+    "instance_id": "95c525c3f1c9",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 8,
+    "correct": false
+  },
+  {
+    "instance_id": "95c525c3f1c9",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 8,
+    "correct": true
+  },
+  {
+    "instance_id": "d0ac0a512bb1",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 8,
+    "correct": true
+  },
+  {
+    "instance_id": "d0ac0a512bb1",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 8,
+    "correct": true
+  },
+  {
+    "instance_id": "65e99c77db05",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 32,
+    "correct": true
+  },
+  {
+    "instance_id": "65e99c77db05",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 32,
+    "correct": true
+  },
+  {
+    "instance_id": "0beca09acb0a",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 16,
+    "correct": true
+  },
+  {
+    "instance_id": "0beca09acb0a",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 16,
+    "correct": true
+  },
+  {
+    "instance_id": "d56ac193c360",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 36,
+    "correct": false
+  },
+  {
+    "instance_id": "d56ac193c360",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 36,
+    "correct": true
+  },
+  {
+    "instance_id": "7f0148e8d2ff",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 12,
+    "correct": false
+  },
+  {
+    "instance_id": "7f0148e8d2ff",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 12,
+    "correct": true
+  },
+  {
+    "instance_id": "888cbdfe1574",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 24,
+    "correct": true
+  },
+  {
+    "instance_id": "888cbdfe1574",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 24,
+    "correct": true
+  },
+  {
+    "instance_id": "a2ff948e741c",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 28,
+    "correct": false
+  },
+  {
+    "instance_id": "a2ff948e741c",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 28,
+    "correct": true
+  },
+  {
+    "instance_id": "1d43ccebf4f3",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 24,
+    "correct": false
+  },
+  {
+    "instance_id": "1d43ccebf4f3",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 24,
+    "correct": true
+  },
+  {
+    "instance_id": "d7a981d24309",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 4,
+    "correct": true
+  },
+  {
+    "instance_id": "d7a981d24309",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 4,
+    "correct": true
+  },
+  {
+    "instance_id": "e31b1db44cd3",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 4,
+    "correct": true
+  },
+  {
+    "instance_id": "e31b1db44cd3",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 4,
+    "correct": true
+  },
+  {
+    "instance_id": "b9b8d1f9219f",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 40,
+    "correct": false
+  },
+  {
+    "instance_id": "b9b8d1f9219f",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 40,
+    "correct": true
+  },
+  {
+    "instance_id": "ba02774fbdfa",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 16,
+    "correct": true
+  },
+  {
+    "instance_id": "ba02774fbdfa",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 16,
+    "correct": true
+  },
+  {
+    "instance_id": "e4bee5a9ebf1",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 32,
+    "correct": false
+  },
+  {
+    "instance_id": "e4bee5a9ebf1",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 32,
+    "correct": true
+  },
+  {
+    "instance_id": "15b913744a28",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 24,
+    "correct": false
+  },
+  {
+    "instance_id": "15b913744a28",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 24,
+    "correct": true
+  },
+  {
+    "instance_id": "b2d3c4843b5c",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 12,
+    "correct": false
+  },
+  {
+    "instance_id": "b2d3c4843b5c",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 12,
+    "correct": true
+  },
+  {
+    "instance_id": "efdb3f695b97",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 36,
+    "correct": false
+  },
+  {
+    "instance_id": "efdb3f695b97",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 36,
+    "correct": true
+  },
+  {
+    "instance_id": "5389861653e1",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 28,
+    "correct": false
+  },
+  {
+    "instance_id": "5389861653e1",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 28,
+    "correct": true
+  },
+  {
+    "instance_id": "13926a201b5f",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 20,
+    "correct": false
+  },
+  {
+    "instance_id": "13926a201b5f",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 20,
+    "correct": true
+  },
+  {
+    "instance_id": "08cc9382640d",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 20,
+    "correct": true
+  },
+  {
+    "instance_id": "08cc9382640d",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 20,
+    "correct": true
+  },
+  {
+    "instance_id": "3d8246dbcd1c",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 8,
+    "correct": false
+  },
+  {
+    "instance_id": "3d8246dbcd1c",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 8,
+    "correct": true
+  },
+  {
+    "instance_id": "7ddce5b16bae",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 40,
+    "correct": false
+  },
+  {
+    "instance_id": "7ddce5b16bae",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 40,
+    "correct": true
+  },
+  {
+    "instance_id": "c1a9f980f1c5",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 4,
+    "correct": true
+  },
+  {
+    "instance_id": "c1a9f980f1c5",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 4,
+    "correct": true
+  },
+  {
+    "instance_id": "99220bfed8a1",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 28,
+    "correct": false
+  },
+  {
+    "instance_id": "99220bfed8a1",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 28,
+    "correct": true
+  },
+  {
+    "instance_id": "295874d5d0e8",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 32,
+    "correct": true
+  },
+  {
+    "instance_id": "295874d5d0e8",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 32,
+    "correct": true
+  },
+  {
+    "instance_id": "813557cdc25b",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 32,
+    "correct": false
+  },
+  {
+    "instance_id": "813557cdc25b",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 32,
+    "correct": true
+  },
+  {
+    "instance_id": "49867eb8ff68",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 20,
+    "correct": true
+  },
+  {
+    "instance_id": "49867eb8ff68",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 20,
+    "correct": true
+  },
+  {
+    "instance_id": "120dd6d87e23",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 4,
+    "correct": true
+  },
+  {
+    "instance_id": "120dd6d87e23",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 4,
+    "correct": true
+  },
+  {
+    "instance_id": "96d6b011faf4",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 4,
+    "correct": true
+  },
+  {
+    "instance_id": "96d6b011faf4",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 4,
+    "correct": true
+  },
+  {
+    "instance_id": "6e399913e388",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 24,
+    "correct": false
+  },
+  {
+    "instance_id": "6e399913e388",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 24,
+    "correct": true
+  },
+  {
+    "instance_id": "aac770f9edce",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 32,
+    "correct": false
+  },
+  {
+    "instance_id": "aac770f9edce",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 32,
+    "correct": true
+  },
+  {
+    "instance_id": "7c23f503c3ec",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 32,
+    "correct": false
+  },
+  {
+    "instance_id": "7c23f503c3ec",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 32,
+    "correct": true
+  },
+  {
+    "instance_id": "eeafd3f60780",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 8,
+    "correct": true
+  },
+  {
+    "instance_id": "eeafd3f60780",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 8,
+    "correct": true
+  },
+  {
+    "instance_id": "6b7bbfb96f8a",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 16,
+    "correct": true
+  },
+  {
+    "instance_id": "6b7bbfb96f8a",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 16,
+    "correct": true
+  },
+  {
+    "instance_id": "d1b73c3e3c39",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 8,
+    "correct": true
+  },
+  {
+    "instance_id": "d1b73c3e3c39",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 8,
+    "correct": true
+  },
+  {
+    "instance_id": "3162e5a238af",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 8,
+    "correct": true
+  },
+  {
+    "instance_id": "3162e5a238af",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 8,
+    "correct": true
+  },
+  {
+    "instance_id": "2e241567436a",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 16,
+    "correct": false
+  },
+  {
+    "instance_id": "2e241567436a",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 16,
+    "correct": true
+  },
+  {
+    "instance_id": "eec561fbacab",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 24,
+    "correct": false
+  },
+  {
+    "instance_id": "eec561fbacab",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 24,
+    "correct": true
+  },
+  {
+    "instance_id": "dd2a59f913a7",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 8,
+    "correct": true
+  },
+  {
+    "instance_id": "dd2a59f913a7",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 8,
+    "correct": true
+  },
+  {
+    "instance_id": "97130f1a0983",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 20,
+    "correct": false
+  },
+  {
+    "instance_id": "97130f1a0983",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 20,
+    "correct": true
+  },
+  {
+    "instance_id": "ac0c1cd3ea10",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 40,
+    "correct": false
+  },
+  {
+    "instance_id": "ac0c1cd3ea10",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 40,
+    "correct": true
+  },
+  {
+    "instance_id": "7c4d46266a91",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 12,
+    "correct": false
+  },
+  {
+    "instance_id": "7c4d46266a91",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 12,
+    "correct": true
+  },
+  {
+    "instance_id": "45254a175de7",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 4,
+    "correct": true
+  },
+  {
+    "instance_id": "45254a175de7",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 4,
+    "correct": true
+  },
+  {
+    "instance_id": "de5d2176944b",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 24,
+    "correct": true
+  },
+  {
+    "instance_id": "de5d2176944b",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 24,
+    "correct": true
+  },
+  {
+    "instance_id": "723cbd2510a1",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 32,
+    "correct": false
+  },
+  {
+    "instance_id": "723cbd2510a1",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 32,
+    "correct": true
+  },
+  {
+    "instance_id": "96d6b011faf4",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 4,
+    "correct": true
+  },
+  {
+    "instance_id": "96d6b011faf4",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 4,
+    "correct": true
+  },
+  {
+    "instance_id": "33520f198346",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 20,
+    "correct": true
+  },
+  {
+    "instance_id": "33520f198346",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 20,
+    "correct": true
+  },
+  {
+    "instance_id": "b18643d52cb7",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 12,
+    "correct": true
+  },
+  {
+    "instance_id": "b18643d52cb7",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 12,
+    "correct": true
+  },
+  {
+    "instance_id": "4b74c950fd9b",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 36,
+    "correct": false
+  },
+  {
+    "instance_id": "4b74c950fd9b",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 36,
+    "correct": true
+  },
+  {
+    "instance_id": "5085a0f9a239",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 24,
+    "correct": false
+  },
+  {
+    "instance_id": "5085a0f9a239",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 24,
+    "correct": true
+  },
+  {
+    "instance_id": "f68750177e00",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 24,
+    "correct": false
+  },
+  {
+    "instance_id": "f68750177e00",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 24,
+    "correct": true
+  },
+  {
+    "instance_id": "a5e5e7188866",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 8,
+    "correct": false
+  },
+  {
+    "instance_id": "a5e5e7188866",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 8,
+    "correct": true
+  },
+  {
+    "instance_id": "c7e7c82aa23d",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 36,
+    "correct": false
+  },
+  {
+    "instance_id": "c7e7c82aa23d",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 36,
+    "correct": true
+  },
+  {
+    "instance_id": "44cdad30005d",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 40,
+    "correct": false
+  },
+  {
+    "instance_id": "44cdad30005d",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 40,
+    "correct": true
+  },
+  {
+    "instance_id": "9e6c5e7bd0ee",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 20,
+    "correct": true
+  },
+  {
+    "instance_id": "9e6c5e7bd0ee",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 20,
+    "correct": true
+  },
+  {
+    "instance_id": "ff0040a6114f",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 40,
+    "correct": false
+  },
+  {
+    "instance_id": "ff0040a6114f",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 40,
+    "correct": true
+  },
+  {
+    "instance_id": "285bafe1cc16",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 20,
+    "correct": true
+  },
+  {
+    "instance_id": "285bafe1cc16",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 20,
+    "correct": true
+  },
+  {
+    "instance_id": "bbe5b03b5384",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 28,
+    "correct": false
+  },
+  {
+    "instance_id": "bbe5b03b5384",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 28,
+    "correct": true
+  },
+  {
+    "instance_id": "dffb4a07720d",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 12,
+    "correct": false
+  },
+  {
+    "instance_id": "dffb4a07720d",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 12,
+    "correct": true
+  },
+  {
+    "instance_id": "087ed7126172",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 20,
+    "correct": true
+  },
+  {
+    "instance_id": "087ed7126172",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 20,
+    "correct": true
+  },
+  {
+    "instance_id": "eb18b880edd0",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 36,
+    "correct": true
+  },
+  {
+    "instance_id": "eb18b880edd0",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 36,
+    "correct": true
+  },
+  {
+    "instance_id": "cd2fe6ea7f95",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 16,
+    "correct": false
+  },
+  {
+    "instance_id": "cd2fe6ea7f95",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 16,
+    "correct": true
+  },
+  {
+    "instance_id": "4bd5998c3f01",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 20,
+    "correct": true
+  },
+  {
+    "instance_id": "4bd5998c3f01",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 20,
+    "correct": true
+  },
+  {
+    "instance_id": "ff66d55d8536",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 32,
+    "correct": false
+  },
+  {
+    "instance_id": "ff66d55d8536",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 32,
+    "correct": true
+  },
+  {
+    "instance_id": "489ed30c8c0d",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 16,
+    "correct": true
+  },
+  {
+    "instance_id": "489ed30c8c0d",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 16,
+    "correct": true
+  },
+  {
+    "instance_id": "0e6d23fb8419",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 16,
+    "correct": false
+  },
+  {
+    "instance_id": "0e6d23fb8419",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 16,
+    "correct": true
+  },
+  {
+    "instance_id": "abaeab78e008",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 12,
+    "correct": true
+  },
+  {
+    "instance_id": "abaeab78e008",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 12,
+    "correct": true
+  },
+  {
+    "instance_id": "400a1b180c59",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 28,
+    "correct": false
+  },
+  {
+    "instance_id": "400a1b180c59",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 28,
+    "correct": true
+  },
+  {
+    "instance_id": "06edbd78696c",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 36,
+    "correct": false
+  },
+  {
+    "instance_id": "06edbd78696c",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 36,
+    "correct": true
+  },
+  {
+    "instance_id": "fe91e575a0a0",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 16,
+    "correct": true
+  },
+  {
+    "instance_id": "fe91e575a0a0",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 16,
+    "correct": true
+  },
+  {
+    "instance_id": "e9763420fe2c",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 40,
+    "correct": false
+  },
+  {
+    "instance_id": "e9763420fe2c",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 40,
+    "correct": true
+  },
+  {
+    "instance_id": "d994f43fe93c",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 40,
+    "correct": false
+  },
+  {
+    "instance_id": "d994f43fe93c",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 40,
+    "correct": true
+  },
+  {
+    "instance_id": "fae64a4be913",
+    "condition": "C1",
+    "model": "synthetic-noisy-cot",
+    "optimal_depth": 40,
+    "correct": false
+  },
+  {
+    "instance_id": "fae64a4be913",
+    "condition": "C3",
+    "model": "bfs-tool",
+    "optimal_depth": 40,
+    "correct": true
+  }
+]

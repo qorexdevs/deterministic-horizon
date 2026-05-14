@@ -1,0 +1,57 @@
+# Main Experiment Configuration
+# ==============================
+# Usage: python -m deterministic_horizon.run experiment=main
+
+defaults:
+  - _self_
+  - model: gpt-4o
+  - task: permutation
+
+# Experiment metadata
+experiment:
+  name: deterministic_horizon_main
+  description: "Main experiment evaluating reasoning boundaries"
+  version: "1.0.0"
+  seed: 42
+
+# Task generation settings
+task:
+  n_instances: 1000
+  min_depth: 5
+  max_depth: 50
+  depth_step: 5
+
+# Evaluation settings
+evaluation:
+  conditions: ["C1", "C2", "C3", "C4"]
+  batch_size: 50
+  max_retries: 3
+  timeout: 120
+
+# Output settings
+output:
+  results_dir: results
+  figures_dir: assets/figures
+  cache_dir: .cache
+  save_traces: true
+  save_attention: false  # Expensive, only for mechanistic analysis
+
+# Logging
+logging:
+  level: INFO
+  wandb:
+    enabled: false
+    project: deterministic-horizon
+    entity: null
+
+# Reproducibility
+reproducibility:
+  seeds: [42, 2024, 2025]
+  deterministic: true
+  save_rng_state: true
+
+# Hardware
+hardware:
+  device: auto  # auto, cpu, cuda, cuda:0, etc.
+  dtype: bfloat16
+  max_memory: null  # Auto-detect
