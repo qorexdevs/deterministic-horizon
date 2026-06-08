@@ -86,7 +86,7 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   constants sync guard (`test_explorer_sync.py`). Suite is now 48 tests.
 
 ### Changed
-- Theorem references in `analysis.py` aligned with the camera-ready numbering
+- Theorem references in `analysis.py` updated to the current numbering
   (Thm 1 → Thm 4.2).
 
 ### Fixed
@@ -113,8 +113,8 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [1.0.1] - 2026-05-14
 
 ### Changed
-- Repository aligned with the ICML 2026 camera-ready paper: theorem numbering,
-  per-model horizons, and headline numbers reconciled with Table 3 / Table 5.
+- Theorem numbering, per-model horizons, and headline numbers reconciled with
+  Table 3 / Table 5.
 - `pyproject.toml` packaging switched to an explicit `package-dir` mapping so the
   flat `src/` layout imports cleanly as `deterministic_horizon`.
 

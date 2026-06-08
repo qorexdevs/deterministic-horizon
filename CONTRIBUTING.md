@@ -1,6 +1,6 @@
 # Contributing to Deterministic Horizon
 
-Thanks for your interest! This repository accompanies the ICML 2026 paper
+Thanks for your interest! This repository accompanies the paper
 *The Deterministic Horizon*. Bug reports, new task adapters, model adapters, and
 analysis extensions are all welcome.
 

@@ -8,7 +8,6 @@
 
 **当扩展的思维链不再有效——工具委派成为唯一的出路。**
 
-[![Paper](https://img.shields.io/badge/paper-ICML%202026-b31b1b.svg)](paper/ICML2026_DeterministicHorizon_FINAL.pdf)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%E2%80%933.12-blue.svg)](https://www.python.org/downloads/)
 [![CI](https://github.com/deterministic-horizon/deterministic-horizon/actions/workflows/ci.yml/badge.svg)](.github/workflows/ci.yml)
@@ -130,7 +129,6 @@ deterministic-horizon/
 ├── data/sample/           # 预生成的排列实例
 ├── results/sample/        # 预计算的合成结果
 ├── configs/               # OmegaConf 配置文件（模型 × 任务 × 实验）
-├── paper/                 # ICML 2026 LaTeX + 最终 PDF
 └── tests/                 # pytest 测试套件（冒烟 / 指标 / 任务 / 策略 / 分析）
 ```
 
@@ -245,25 +243,6 @@ pip install -e ".[all,dev]"
 
 ---
 
-## 引用
-
-如果你使用了这份代码或在此基础上发展，请引用：
-
-```bibtex
-@inproceedings{deterministichorizon2026,
-  title        = {The Deterministic Horizon: When Extended Reasoning Fails
-                  and Tool Delegation Becomes Necessary},
-  author       = {Anonymous Authors},
-  booktitle    = {Proceedings of the 43rd International Conference on Machine Learning (ICML)},
-  year         = {2026},
-  url          = {https://github.com/deterministic-horizon/deterministic-horizon},
-}
-```
-
-项目已包含 `CITATION.cff` 文件，GitHub 将自动填充"引用此仓库"按钮。
-
----
-
 ## 贡献
 
 欢迎提交 bug 报告、新任务和扩展。参见 [`CONTRIBUTING.md`](CONTRIBUTING.md)；Issue 模板和 PR 检查清单已在 [`.github/`](.github/) 中配置。标记为 `good-first-issue` 的开放 Issue 是很好的入门起点。
@@ -286,7 +265,7 @@ pip install -e ".[all,dev]"
 
 ## 致谢
 
-感谢 ICML 审稿人和讨论者的意见。微调实验使用了匿名捐赠者的计算资源；开源模型评估使用了 Together AI 的 credits。
+感谢审稿人和讨论者的意见。微调实验使用了匿名捐赠者的计算资源；开源模型评估使用了 Together AI 的 credits。
 
 ---
 
@@ -295,6 +274,6 @@ pip install -e ".[all,dev]"
 **觉得这个项目有用？** 给仓库加个 Star，并分享给所有在构建智能体系统的人。
 确定性视界不是一个软性建议——它是一堵墙。
 
-[论文](paper/ICML2026_DeterministicHorizon_FINAL.pdf) · [文档](docs/README.md) · [何时委派](docs/when-to-delegate.md) · [快速上手笔记本](notebooks/01_quickstart.ipynb) · [Issue](https://github.com/deterministic-horizon/deterministic-horizon/issues)
+[文档](docs/README.md) · [何时委派](docs/when-to-delegate.md) · [快速上手笔记本](notebooks/01_quickstart.ipynb) · [Issue](https://github.com/deterministic-horizon/deterministic-horizon/issues)
 
 </div>

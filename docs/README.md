@@ -1,8 +1,8 @@
 # Documentation
 
-Welcome to the documentation for **The Deterministic Horizon** — the ICML 2026
-paper on when extended chain-of-thought stops helping and tool delegation
-becomes *necessary*.
+Welcome to the documentation for **The Deterministic Horizon** — the paper on
+when extended chain-of-thought stops helping and tool delegation becomes
+*necessary*.
 
 ## Start here
 

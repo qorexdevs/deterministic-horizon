@@ -2,8 +2,8 @@
 Deterministic Horizon — When Extended Reasoning Fails and Tool Delegation
 Becomes Necessary.
 
-Official implementation for the ICML 2026 submission. The package exposes
-four primary surface areas:
+Official implementation accompanying the Deterministic Horizon paper. The
+package exposes four primary surface areas:
 
 - ``tasks``   — generators and evaluators for state-space search problems
 - ``models``  — uniform interface across OpenAI / Anthropic / DeepSeek / local

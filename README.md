@@ -8,9 +8,8 @@
 
 ### When extended chain-of-thought stops helping — and tool delegation becomes *necessary*
 
-*Official code for the ICML 2026 paper.*
+*Official code for the Deterministic Horizon paper.*
 
-[![Paper (ICML 2026)](https://img.shields.io/badge/paper-ICML%202026-b31b1b.svg)](paper/ICML2026_DeterministicHorizon_CameraReady.pdf)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.10–3.13](https://img.shields.io/badge/python-3.10%E2%80%933.13-blue.svg)](https://www.python.org/downloads/)
 [![Code style: ruff](https://img.shields.io/badge/lint-ruff-46aef7.svg)](https://github.com/astral-sh/ruff)
@@ -225,7 +224,6 @@ deterministic-horizon/
 ├── data/sample/         # BFS-optimal PermutationProbe instances (n=8)
 ├── results/sample/      # Pre-computed synthetic C1/C3 results
 ├── configs/             # OmegaConf configs (model × task × experiment)
-├── paper/               # ICML 2026 camera-ready (LaTeX + PDF)
 └── tests/               # pytest suite (smoke · metrics · tasks · policy · analysis)
 ```
 
@@ -268,21 +266,6 @@ Full FAQ: **[docs/faq.md](docs/faq.md)**.
 
 ---
 
-## Citation
-
-```bibtex
-@inproceedings{guo2026deterministic,
-  author    = {Guo, Dongxin and Wu, Jikun and Yiu, Siu Ming},
-  title     = {The Deterministic Horizon: When Extended Reasoning Fails and Tool Delegation Becomes Necessary},
-  booktitle = {Proceedings of the 43rd International Conference on Machine Learning (ICML)},
-  year      = {2026},
-}
-```
-
-A [`CITATION.cff`](CITATION.cff) is included, so GitHub's "Cite this repository" button works out of the box.
-
----
-
 ## Contributing
 
 Bug reports, new tasks, and extensions are welcome. See [`CONTRIBUTING.md`](CONTRIBUTING.md); issue templates and a PR checklist are wired up under [`.github/`](.github/). Research directions (help wanted):
@@ -299,7 +282,7 @@ Bug reports, new tasks, and extensions are welcome. See [`CONTRIBUTING.md`](CONT
 **The Deterministic Horizon isn't a soft suggestion — it's a wall.**
 If your next subproblem is ≳ 20 deterministic state-tracking steps, delegate.
 
-[Paper](paper/ICML2026_DeterministicHorizon_CameraReady.pdf) · [Docs](docs/README.md) · [When to delegate](docs/when-to-delegate.md) · [Interactive explorer](https://bettyguo.github.io/deterministic-horizon/) · [Quickstart notebook](notebooks/01_quickstart.ipynb) · [Issues](https://github.com/bettyguo/deterministic-horizon/issues)
+[Docs](docs/README.md) · [When to delegate](docs/when-to-delegate.md) · [Interactive explorer](https://bettyguo.github.io/deterministic-horizon/) · [Quickstart notebook](notebooks/01_quickstart.ipynb) · [Issues](https://github.com/bettyguo/deterministic-horizon/issues)
 
 </div>
 

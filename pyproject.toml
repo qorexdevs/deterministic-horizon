@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "deterministic-horizon"
 version = "1.0.1"
-description = "When Extended Reasoning Fails and Tool Delegation Becomes Necessary — official code for the Deterministic Horizon paper (ICML 2026 submission)."
+description = "When Extended Reasoning Fails and Tool Delegation Becomes Necessary — official code for the Deterministic Horizon paper."
 readme = "README.md"
 requires-python = ">=3.10,<3.14"
 license = { file = "LICENSE" }
@@ -83,7 +83,6 @@ dh = "deterministic_horizon.cli:main"
 Homepage = "https://github.com/bettyguo/deterministic-horizon"
 Repository = "https://github.com/bettyguo/deterministic-horizon"
 Issues = "https://github.com/bettyguo/deterministic-horizon/issues"
-Paper = "https://github.com/bettyguo/deterministic-horizon/blob/main/paper/ICML2026_DeterministicHorizon_CameraReady.pdf"
 Documentation = "https://github.com/bettyguo/deterministic-horizon/blob/main/docs/README.md"
 Changelog = "https://github.com/bettyguo/deterministic-horizon/blob/main/CHANGELOG.md"
 
