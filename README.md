@@ -23,8 +23,6 @@
 
 <sub><b>The wall has a name.</b> Neural CoT accuracy follows the super-exponential decay of Theorem&nbsp;4.2 and crosses 50% at the <b>Deterministic Horizon</b> <i>d</i>*. Tool delegation (C3) ignores the wall. <i>This is the offline <b>synthetic</b> reproduction (regenerated live from <a href="results/sample/synthetic_results.json"><code>results/sample/</code></a> — no API keys); it mirrors the paper's Fig.&nbsp;1 on real GPT-4o, whose measured numbers (d*&nbsp;=&nbsp;22, tool&nbsp;≈&nbsp;90%) appear in the table below.</i></sub>
 
-Interactive horizon visualiser — [live explorer](https://bettyguo.github.io/deterministic-horizon/) ([source](docs/index.html)) with model comparison, cost analysis, an agent decomposition planner, and a delegation quiz
-
 </div>
 
 ---
@@ -80,34 +78,7 @@ The decision is the paper's Theorem&nbsp;4.2 decay model, `ε(d) = ε₀ + γ·d
 
 ---
 
-## 60-second offline demo (no API keys)
-
-```bash
-git clone https://github.com/bettyguo/deterministic-horizon
-cd deterministic-horizon
-pip install -e .
-python examples/demo.py            # estimates the horizon live, offline
-python examples/agent_routing.py   # end-to-end routing pattern
-
-# Or query the policy straight from the CLI — no API keys, no data:
-dh delegate --depth 30 --model claude-4.5-opus   # → DELEGATE (47% CoT vs 92% tool)
-dh horizons                                       # per-model d* / ε₀ / L_eff table
-dh compare-figure                                 # render the per-model decay-curve figure
-```
-
-You'll watch the horizon estimated from a synthetic decoherence simulator (per-step error exactly `ε₀ + γ·d/L_eff`), a decoherence-model fit of **R² ≈ 0.95**, and a publication-grade figure written to `analysis/figure_decay.png` (the hero image above).
-
-Want the **real LLMs**? Add API keys to `.env` (see [`.env.example`](.env.example)) and:
-
-```bash
-dh evaluate --model gpt-4o --instances data/sample/permutation_n8.json \
-            --conditions C1,C3 --output results/gpt4o.json
-dh analyze  --results results/gpt4o.json --output analysis/gpt4o/
-```
-
----
-
-## Headline findings (and how to reproduce them)
+## Headline findings
 
 | Metric | Value | Why it matters |
 |---|---|---|
@@ -119,27 +90,7 @@ dh analyze  --results results/gpt4o.json --output analysis/gpt4o/
 | Cost efficiency (tool vs. CoT) | **4.2–4.7×** | Lower cost-per-correct-solution. |
 | Decoherence-model fit | **R² = 0.96** | Super-exponential decay beats linear (0.71) and exponential (0.83). |
 
-```bash
-make paper-figures   # regenerate assets/figure_*.png  from results/sample/
-make paper-tables    # regenerate analysis/*.{md,json} from results/sample/
-```
-
 Seeds (`{42, 2024, 2025}`), costs, and a wall-clock breakdown: **[docs/reproducing.md](docs/reproducing.md)**.
-
----
-
-## Why this is different from "overthinking" papers
-
-Prior work ([Wu et al., 2025](https://arxiv.org/abs/2503.16419)) attributes the inverted-U to a **Simplicity Bias** — a trained *preference* for short outputs, which fine-tuning should fix. We propose a **complementary architectural diagnosis**: even a model that *tries* to reason long *cannot* keep state, because causal attention lacks the substrate. The two theories make **four divergent, falsifiable predictions** — and the data backs the architectural one:
-
-| | Simplicity Bias | **Decoherence (this work)** | Observed |
-|---|---:|---:|---:|
-| Fine-tune recovery | > 30% | **< 5%** | **3.2%** ✅ |
-| Length-prompt gain | > 10% | **< 2%** | **0.9%** ✅ |
-| Cross-model $r$ | low | **high** | **0.85** ✅ |
-| Encoder-decoder advantage | none | **2–3×** | **2.8×** ✅ |
-
-Plain-English walkthrough of each theorem: **[docs/theorem-cheatsheet.md](docs/theorem-cheatsheet.md)**.
 
 ---
 
@@ -218,11 +169,6 @@ deterministic-horizon/
 │   ├── runners.py       # High-level evaluate(...) Python API
 │   └── cli.py           # dh generate | evaluate | analyze | delegate | horizons | compare-figure
 ├── examples/            # demo.py (offline horizon) · agent_routing.py
-├── notebooks/           # 01_quickstart.ipynb (Colab-friendly)
-├── docs/                # When-to-delegate · Theorem cheat-sheet · Reproducing · FAQ
-├── scripts/             # regenerate_sample_data.py (deterministic artifacts)
-├── data/sample/         # BFS-optimal PermutationProbe instances (n=8)
-├── results/sample/      # Pre-computed synthetic C1/C3 results
 ├── configs/             # OmegaConf configs (model × task × experiment)
 └── tests/               # pytest suite (smoke · metrics · tasks · policy · analysis)
 ```
@@ -239,30 +185,6 @@ pip install -e ".[all,dev]"           # everything + test/lint tooling
 ```
 
 Requires Python 3.10–3.13. CI runs the suite on Linux, macOS, and Windows.
-
----
-
-## FAQ (highlights)
-
-<details>
-<summary><b>Is the offline demo cherry-picked?</b></summary>
-
-No. The demo uses a *synthetic* reasoner whose per-step error follows the exact context-dependent model of Theorem 4.2. It's a controlled illustration; the cross-model empirical numbers come from real API calls — 12 models × 5 conditions × 8 tasks × 500 instances × 3 seeds = 720,000 evaluations, ~$3,420 in API cost.
-</details>
-
-<details>
-<summary><b>How is this different from "transformers can't do X" papers?</b></summary>
-
-Expressivity work proves what transformers *cannot compute in principle* (asymptotic $\text{TC}^0$ statements). We characterise what frontier models *cannot reliably execute in practice* at the depths real systems run at, give a closed-form bound, and prove fine-tuning cannot move it. The Deterministic Horizon is a usable engineering quantity (~22 steps), not an asymptotic.
-</details>
-
-<details>
-<summary><b>Does this mean reasoning models are useless?</b></summary>
-
-The opposite — it tells you exactly *when* to use them and *when* to delegate. Below d\* extended reasoning helps; past d\* it degrades and tools win by 50–70 points. The contribution is knowing the boundary.
-</details>
-
-Full FAQ: **[docs/faq.md](docs/faq.md)**.
 
 ---
 
