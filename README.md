@@ -2,7 +2,7 @@
 
 # 🧭 The Deterministic Horizon
 
-### When extended chain-of-thought stops helping — and tool delegation becomes *necessary*
+### When extended chain-of-thought stops helping and tool delegation becomes *necessary*
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.10–3.13](https://img.shields.io/badge/python-3.10%E2%80%933.13-blue.svg)](https://www.python.org/downloads/)
@@ -26,28 +26,6 @@
 | Fine-tuning recovery | **+3.2%** | Theorem 4.7 predicts < 5%; the competing theory predicts > 30%. |
 | Cost efficiency (tool vs. CoT) | **4.2–4.7×** | Lower cost-per-correct-solution. |
 | Decoherence-model fit | **R² = 0.96** | Super-exponential decay beats linear (0.71) and exponential (0.83). |
-
-Seeds (`{42, 2024, 2025}`), costs, and a wall-clock breakdown: **[docs/reproducing.md](docs/reproducing.md)**.
-
----
-
-## The theory in three equations
-
-**Context-dependent per-step error** (Theorem 4.2) — error grows with *position* in the chain, not just task size:
-
-$$\varepsilon(d) = \varepsilon_0 + \gamma\,\frac{d}{L_{\text{eff}}}\qquad\Longrightarrow\qquad P(\text{correct at depth }d) \approx \exp\!\Big(-d\varepsilon_0 - \tfrac{\gamma\,d(d+1)}{2L_{\text{eff}}}\Big)$$
-
-Here $L_{\text{eff}}$ is the **effective decoherence length** — the number of steps over which attention keeps usable state resolution, empirically $O(10^2)$ steps, *not* the raw context window $O(10^5)$ tokens.
-
-**Attention Bottleneck** (Theorem 4.4, with a complementary achievability construction) — capacity is bounded by the architecture:
-
-$$|\mathcal{S}_{\text{track}}| \le c(\delta,\rho_{\max})\cdot 2^{\,H\,\log_2(L/H)\,\sqrt{d_h}}$$
-
-**Deterministic Horizon** (Theorem 4.5) — solving $P(\text{correct}) = \alpha$ gives a closed form; for GPT-4o ($\varepsilon_0=0.02,\gamma=0.15,L_{\text{eff}}=150,\alpha=0.5$) it yields $d^* \approx 22.3$:
-
-$$d^* = \frac{-\varepsilon_0 L_{\text{eff}} + \sqrt{\varepsilon_0^2 L_{\text{eff}}^2 + 2\gamma L_{\text{eff}}\ln(1/\alpha)}}{\gamma}$$
-
-A fourth result (Theorem 4.7) bounds fine-tuning recovery by $O(d^*/d)$ — the architectural ceiling. Proofs are in the appendix; the formulas live in [`policy.py`](src/policy.py) and [`metrics/statistics.py`](src/metrics/statistics.py).
 
 ---
 
@@ -104,8 +82,7 @@ deterministic-horizon/
 │   ├── metrics/         # SSJ, SFE, super-exponential horizon fit, bootstrap CIs
 │   ├── analysis.py      # Figures + tables (+ plot_model_horizons comparison)
 │   ├── runners.py       # High-level evaluate(...) Python API
-│   └── cli.py           # dh generate | evaluate | analyze | delegate | horizons | compare-figure
-├── examples/            # demo.py (offline horizon) · agent_routing.py
+│   └── cli.py           # evaluate | analyze | delegate | horizons 
 ├── configs/             # OmegaConf configs (model × task × experiment)
 └── tests/               # pytest suite (smoke · metrics · tasks · policy · analysis)
 ```
