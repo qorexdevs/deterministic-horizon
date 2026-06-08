@@ -8,8 +8,6 @@
 [![Python 3.10–3.13](https://img.shields.io/badge/python-3.10%E2%80%933.13-blue.svg)](https://www.python.org/downloads/)
 [![Code style: ruff](https://img.shields.io/badge/lint-ruff-46aef7.svg)](https://github.com/astral-sh/ruff)
 [![Tests](https://img.shields.io/badge/tests-61%20passing-brightgreen.svg)](tests/)
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bettyguo/deterministic-horizon/blob/main/notebooks/01_quickstart.ipynb)
-[![Live demo](https://img.shields.io/badge/live%20demo-interactive%20explorer-8a4fff.svg)](https://bettyguo.github.io/deterministic-horizon/)
 
 <br/>
 
