@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🧭 The Deterministic Horizon
+# The Deterministic Horizon
 
 ### When extended chain-of-thought stops helping and tool delegation becomes *necessary*
 
