@@ -1,7 +1,7 @@
 """
 Figure and table generation for the Deterministic Horizon paper.
 
-This module reproduces the headline plots (accuracy decay, horizon location,
+This module generates the headline plots (accuracy decay, horizon location,
 SSJ precision/recall split, cross-model correlation heatmap) directly from
 the JSON results emitted by ``deterministic_horizon.cli evaluate``.
 
@@ -60,7 +60,7 @@ def plot_model_horizons(
     Overlay the Theorem 4.2 decay curve for every model in
     ``policy.MODEL_HORIZONS`` and mark each model's horizon d*.
 
-    This is the static, publication-grade twin of the web explorer's
+    This is the static, publication-grade companion to the
     "Why some models reach further" comparison chart. Returns the saved path,
     or ``None`` if matplotlib is unavailable.
     """

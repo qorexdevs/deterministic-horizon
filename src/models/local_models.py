@@ -13,7 +13,7 @@ from deterministic_horizon.models.base import BaseModel, ModelResponse
 class LocalModel(BaseModel):
     """Interface for locally-run models using transformers/vLLM."""
 
-    # HuggingFace model IDs (paper's open-weight suite; Reproducibility checklist).
+    # HuggingFace model IDs (paper's open-weight suite).
     MODEL_MAPPING = {
         "llama-3.1-8b": "meta-llama/Llama-3.1-8B-Instruct",
         "llama-3.3-70b": "meta-llama/Llama-3.3-70B-Instruct",

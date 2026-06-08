@@ -5,7 +5,6 @@ from __future__ import annotations
 import math
 
 import pytest
-
 from deterministic_horizon import (
     DelegationDecision,
     delegation_decision,

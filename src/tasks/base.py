@@ -141,7 +141,7 @@ class BaseTask(ABC):
         Initialize task.
 
         Args:
-            seed: Random seed for reproducibility
+            seed: Random seed for deterministic generation
             n_elements: Number of elements in state space
             operators: List of operator names
         """

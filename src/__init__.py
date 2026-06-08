@@ -8,7 +8,7 @@ package exposes four primary surface areas:
 - ``tasks``   — generators and evaluators for state-space search problems
 - ``models``  — uniform interface across OpenAI / Anthropic / DeepSeek / local
 - ``metrics`` — SSJ, SFE, accuracy decay, horizon estimation
-- ``analysis``— figure & table generation reproducing the paper's plots
+- ``analysis``— figure & table generation for the paper's plots
 """
 
 from importlib.metadata import PackageNotFoundError, version

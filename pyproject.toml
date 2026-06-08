@@ -83,7 +83,7 @@ dh = "deterministic_horizon.cli:main"
 Homepage = "https://github.com/bettyguo/deterministic-horizon"
 Repository = "https://github.com/bettyguo/deterministic-horizon"
 Issues = "https://github.com/bettyguo/deterministic-horizon/issues"
-Documentation = "https://github.com/bettyguo/deterministic-horizon/blob/main/docs/README.md"
+Documentation = "https://github.com/bettyguo/deterministic-horizon/blob/main/README.md"
 Changelog = "https://github.com/bettyguo/deterministic-horizon/blob/main/CHANGELOG.md"
 
 # The package sources live flat under src/ (src/__init__.py, src/analysis.py, …)

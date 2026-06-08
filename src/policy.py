@@ -12,12 +12,12 @@ systems can call at planning time. The math is **exactly** the paper's:
 
       P(correct at depth d) ≈ exp(−d·ε₀ − γ·d(d+1) / (2·L_eff))
 
-* Deterministic Horizon (Theorem 4.5), the depth at which P = α:
+* Deterministic Horizon (Theorem 4.8), the depth at which P = α:
 
       d* = (−ε₀·L_eff + √(ε₀²·L_eff² + 2γ·L_eff·ln(1/α))) / γ
 
 The constants are the paper's: γ = 0.15 and, for GPT-4o, ε₀ = 0.02,
-L_eff = 150, which reproduces the paper's d* ≈ 22.3 (§4, Theorem 4.5). The
+L_eff = 150, which yields d* ≈ 22 for GPT-4o (§4, Theorem 4.8). The
 *effective decoherence length* L_eff = O(10²) steps is far smaller than the raw
 context window L = O(10⁵) tokens — using the raw L would wash out the quadratic
 term and incorrectly predict near-perfect accuracy (paper, Appendix on numerical
@@ -49,7 +49,7 @@ from dataclasses import dataclass
 from typing import Literal
 
 # ---------------------------------------------------------------------------
-# Paper-canonical constants (§4, Theorems 4.2 & 4.5).
+# Paper-canonical constants (§4, Theorems 4.2 & 4.8).
 #
 #   γ      attention decay rate, shared across models.
 #   ε₀     baseline per-step error (paper MLE 0.020, 95% CI [0.017, 0.023]).
@@ -93,7 +93,7 @@ def _l_eff_for(eps0: float, d_star: float, alpha: float = ALPHA_DEFAULT) -> floa
 
 _MODEL_EPS0_DSTAR: dict[str, tuple[float, float]] = {
     # General-purpose (closed) ------------------------------------------------
-    "gpt-4o": (0.020, 22.0),  # paper canonical: ε₀=0.02, L_eff=150, d*≈22.3
+    "gpt-4o": (0.020, 22.0),  # paper canonical: ε₀=0.02, L_eff=150 → d*≈22
     "claude-4.5-opus": (0.018, 27.0),
     # Reasoning-specialised ---------------------------------------------------
     "o3-mini": (0.014, 31.0),  # highest horizon in the suite

@@ -3,7 +3,12 @@
 from __future__ import annotations
 
 import pytest
-from deterministic_horizon import PermutationTask, generate_instances
+from deterministic_horizon import (
+    ArithmeticTask,
+    FSATask,
+    PermutationTask,
+    generate_instances,
+)
 
 
 def test_permutation_apply_operator_swap():
@@ -43,3 +48,43 @@ def test_generate_instances_helper():
 def test_unknown_task_raises():
     with pytest.raises(ValueError, match="Unknown task"):
         generate_instances("does-not-exist", n_instances=2)
+
+
+# --- Construction + prompt-formatting regression coverage for every task ---
+# default_operators() runs inside BaseTask.__init__, so constructing each task
+# guards against attribute-ordering regressions; format_prompt is exercised for
+# all five experimental conditions (C1-C5).
+
+_TASK_FACTORIES = [
+    pytest.param(lambda: PermutationTask(n_elements=8, seed=1), id="permutation"),
+    pytest.param(lambda: FSATask(seed=1), id="fsa"),
+    pytest.param(lambda: ArithmeticTask(seed=1), id="arithmetic"),
+]
+
+
+@pytest.mark.parametrize("make_task", _TASK_FACTORIES)
+def test_task_constructs_with_defaults(make_task):
+    task = make_task()
+    assert task.default_operators()
+
+
+@pytest.mark.parametrize("make_task", _TASK_FACTORIES)
+@pytest.mark.parametrize("condition", ["C1", "C2", "C3", "C4", "C5"])
+def test_format_prompt_returns_nonempty_pair(make_task, condition):
+    task = make_task()
+    state = task.initial_state()
+    user_prompt, system_prompt = task.format_prompt(state, state, condition)
+    assert isinstance(user_prompt, str) and user_prompt.strip()
+    assert isinstance(system_prompt, str) and system_prompt.strip()
+
+
+@pytest.mark.parametrize("make_task", _TASK_FACTORIES)
+def test_condition_semantics_match_paper(make_task):
+    # C2 = depth-limited CoT (oracle optimal length); C4 = explicit length
+    # encouragement. Lock these in so they cannot silently revert.
+    task = make_task()
+    state = task.initial_state()
+    c2 = " ".join(task.format_prompt(state, state, "C2")).lower()
+    c4 = " ".join(task.format_prompt(state, state, "C4")).lower()
+    assert "minimum" in c2 or "optimal" in c2
+    assert "as many steps" in c4

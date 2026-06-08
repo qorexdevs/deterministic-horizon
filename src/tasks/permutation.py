@@ -239,10 +239,17 @@ Think step by step. For each step, write:
 Continue until you reach the target state."""
 
         elif condition == "C2":
-            # Direct answer (no reasoning)
-            system_prompt = "Answer directly without explanation."
-            user_prompt = f"""Transform {state_str} to {target_str} using operations: {ops_str}.
-Output only the sequence of operations, one per line."""
+            # Depth-limited CoT (oracle optimal length)
+            system_prompt = """You are solving a permutation puzzle. Reason step by step, showing the state after each operation, but use exactly the optimal (minimum) number of operations and do not add any extra steps."""
+
+            user_prompt = f"""Transform the permutation from initial state to target state in the minimum number of operations.
+
+Initial state: {state_str}
+Target state: {target_str}
+
+Available operations: {ops_str}
+
+Think step by step, writing the operation and the resulting state at each step, and stop as soon as you reach the target. Use no more than the optimal number of steps."""
 
         elif condition == "C3":
             # Tool-integrated
@@ -259,8 +266,17 @@ Use the apply_operation tool to apply operations and verify_state to check your 
 Operations: {ops_str}"""
 
         elif condition == "C4":
-            # Best-of-N (same as C1 but multiple samples)
-            return self.format_prompt(initial_state, target_state, "C1")
+            # Explicit length encouragement
+            system_prompt = """You are solving a permutation puzzle. Think through each step carefully, showing the state after each operation. Take as many steps as you need: there is no limit on the number of operations, so reason for as long as necessary to be certain."""
+
+            user_prompt = f"""Transform the permutation from initial state to target state.
+
+Initial state: {state_str}
+Target state: {target_str}
+
+Available operations: {ops_str}
+
+Take as many reasoning steps as you need. For each step, write the operation you're applying and the resulting state, and continue until you reach the target state."""
 
         elif condition == "C5":
             # Fine-tuned format (detailed trace)
@@ -347,7 +363,7 @@ Solve step by step, showing each state change."""
         Return tool definitions wired to a session (created on demand).
 
         The returned ``executor`` callables maintain real puzzle state,
-        making C3 a faithful reproduction of tool-integrated reasoning.
+        making C3 a faithful implementation of tool-integrated reasoning.
         """
         if session is None:
             session = self.make_tool_session(self.initial_state(), self.initial_state())

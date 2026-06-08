@@ -14,7 +14,7 @@ class ModelConfig:
     name: str = ""
     provider: str = ""
     temperature: float = 0.0
-    max_tokens: int = 8192  # paper reproducibility setting
+    max_tokens: int = 8192  # paper setting
     timeout: int = 120
     max_retries: int = 3
 
@@ -47,7 +47,7 @@ class ExperimentConfig:
 
     name: str = "default"
     seeds: list[int] = field(default_factory=lambda: [42, 2024, 2025])
-    n_instances: int = 1000
+    n_instances: int = 500
     conditions: list[str] = field(default_factory=lambda: ["C1", "C2", "C3"])
 
     # Evaluation
@@ -77,7 +77,7 @@ class Config:
     experiment: ExperimentConfig = field(default_factory=ExperimentConfig)
     output: OutputConfig = field(default_factory=OutputConfig)
 
-    # Reproducibility
+    # Determinism
     random_seed: int = 42
     deterministic: bool = True
 

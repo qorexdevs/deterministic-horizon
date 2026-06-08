@@ -24,10 +24,9 @@ class ArithmeticTask(BaseTask):
     ) -> None:
         self.max_value = n_elements
         self.use_fractions = use_fractions
-        super().__init__(seed=seed, n_elements=n_elements, **kwargs)
-
         # Operation parameters
         self._operands = [2, 3, 5, 7, 10]
+        super().__init__(seed=seed, n_elements=n_elements, **kwargs)
 
     def default_operators(self) -> list[str]:
         """Return default arithmetic operators."""
@@ -137,10 +136,13 @@ Show your work step by step. For each step:
 Continue until you reach {target_str}."""
 
         elif condition == "C2":
-            system_prompt = "Output only the sequence of operations."
-            user_prompt = f"""Start: {init_str}, Target: {target_str}
-Operations: {ops_str}
-List operations only, one per line."""
+            system_prompt = """You are solving a multi-step arithmetic problem. Show each step with the operation and resulting value, but use exactly the optimal (minimum) number of operations and do not add any extra steps."""
+
+            user_prompt = f"""Transform the number from {init_str} to {target_str} in the minimum number of operations.
+
+Available operations: {ops_str}
+
+Show your work step by step (current value, operation, new value) and stop as soon as you reach {target_str}, using no more than the optimal number of steps."""
 
         elif condition == "C3":
             system_prompt = """Use the calculator tools to transform the number.
@@ -149,6 +151,15 @@ Verify your result after each operation."""
             user_prompt = f"""Transform {init_str} to {target_str}.
 Operations: {ops_str}
 Use tools to apply operations and verify results."""
+
+        elif condition == "C4":
+            system_prompt = """You are solving a multi-step arithmetic problem. Show each step with the operation and resulting value. Take as many steps as you need: there is no limit, so reason for as long as necessary to reach the target."""
+
+            user_prompt = f"""Transform the number from {init_str} to {target_str}.
+
+Available operations: {ops_str}
+
+Take as many steps as you need. For each step, state the current value, the operation, and the new value, continuing until you reach {target_str}."""
 
         else:
             return self.format_prompt(initial_state, target_state, "C1")

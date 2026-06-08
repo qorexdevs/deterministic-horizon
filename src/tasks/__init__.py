@@ -30,7 +30,7 @@ def generate_instances(
         depth_range: (min_depth, max_depth) tuple. For PermutationProbe the max
             BFS-optimal depth is the diameter C(n, 2) (28 for the default n=8).
         depth_step: Step between successive depths.
-        seed: Random seed for reproducibility
+        seed: Random seed for deterministic generation
         **task_kwargs: Additional task-specific arguments
 
     Returns:

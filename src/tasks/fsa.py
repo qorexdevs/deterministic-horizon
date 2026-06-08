@@ -43,7 +43,7 @@ class FSATask(BaseTask):
 
     def default_operators(self) -> list[str]:
         """Return symbols as operators."""
-        return self.symbols
+        return [chr(ord("a") + i) for i in range(self.n_symbols)]
 
     def initial_state(self) -> str:
         """Return initial state."""
@@ -102,11 +102,15 @@ Trace through the automaton step by step. For each step, show:
 Find an input sequence that reaches the target state."""
 
         elif condition == "C2":
-            system_prompt = "Output only the input sequence."
-            user_prompt = f"""FSA with states {self.states}.
-{table_str}
-Start: {initial_state}, Target: {target_state}
-Output the input sequence (letters only)."""
+            system_prompt = """You are simulating a finite state automaton (FSA). Trace each transition step by step, but use exactly the optimal (minimum) number of transitions and do not add any extra steps."""
+
+            user_prompt = f"""{table_str}
+
+Starting state: {initial_state}
+
+You need to reach state: {target_state}
+
+Trace through the automaton step by step, showing the current state, input symbol, and next state at each step, using the minimum number of transitions needed to reach the target."""
 
         elif condition == "C3":
             system_prompt = """Simulate the FSA using the verification tools.
@@ -118,6 +122,17 @@ Starting state: {initial_state}
 Target state: {target_state}
 
 Use tools to navigate to the target state."""
+
+        elif condition == "C4":
+            system_prompt = """You are simulating a finite state automaton (FSA). Trace each transition step by step, showing the state after each symbol. Take as many steps as you need: there is no limit, so reason for as long as necessary to reach the target."""
+
+            user_prompt = f"""{table_str}
+
+Starting state: {initial_state}
+
+You need to reach state: {target_state}
+
+Take as many steps as you need. For each step, show the current state, the input symbol, and the next state, continuing until you reach the target state."""
 
         else:
             return self.format_prompt(initial_state, target_state, "C1")

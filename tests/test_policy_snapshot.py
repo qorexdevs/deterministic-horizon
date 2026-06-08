@@ -6,7 +6,6 @@ import json
 from pathlib import Path
 
 import pytest
-
 from deterministic_horizon.policy import MODEL_HORIZONS
 
 SNAPSHOT_PATH = Path(__file__).parent / "snapshots" / "model_horizons.json"
