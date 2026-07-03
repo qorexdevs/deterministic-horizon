@@ -1,10 +1,9 @@
 """Abstract base class for model interfaces."""
 
+import time
 from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
 from typing import Any
-
-import time
 
 
 @dataclass

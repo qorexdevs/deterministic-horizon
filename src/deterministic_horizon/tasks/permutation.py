@@ -1,10 +1,10 @@
 """Permutation puzzle task implementation."""
 
 import re
-from typing import Any
 from collections import deque
+from typing import Any
 
-from deterministic_horizon.tasks.base import BaseTask, TaskInstance
+from deterministic_horizon.tasks.base import BaseTask
 
 
 class PermutationTask(BaseTask):
