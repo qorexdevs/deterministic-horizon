@@ -25,6 +25,7 @@ from transformers import (
 
 try:
     from peft import LoraConfig, TaskType, get_peft_model
+
     PEFT_AVAILABLE = True
 except ImportError:
     PEFT_AVAILABLE = False
@@ -173,6 +174,7 @@ def prepare_finetune_dataset(
         Tuple of (num_train_written, num_val_written)
     """
     import random
+
     random.seed(seed)
 
     # Load instances
@@ -181,7 +183,8 @@ def prepare_finetune_dataset(
 
     # Filter instances with valid solutions
     valid_instances = [
-        inst for inst in instances
+        inst
+        for inst in instances
         if inst.get("optimal_solution") and len(inst.get("optimal_solution", [])) > 0
     ]
 
@@ -190,7 +193,7 @@ def prepare_finetune_dataset(
     # Shuffle and split
     random.shuffle(valid_instances)
     train_data = valid_instances[:num_train]
-    val_data = valid_instances[num_train:num_train + num_val]
+    val_data = valid_instances[num_train : num_train + num_val]
 
     # Format for fine-tuning
     def format_instance(inst: dict) -> dict:
@@ -343,15 +346,14 @@ class FinetuneTrainer:
         return {
             "train_loss": train_result.training_loss,
             "train_runtime": train_result.metrics.get("train_runtime", 0),
-            "train_samples_per_second": train_result.metrics.get(
-                "train_samples_per_second", 0
-            ),
+            "train_samples_per_second": train_result.metrics.get("train_samples_per_second", 0),
         }
 
     def _wandb_available(self) -> bool:
         """Check if wandb is available."""
         try:
             import importlib.util
+
             return importlib.util.find_spec("wandb") is not None
         except Exception:
             return False

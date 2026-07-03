@@ -1,4 +1,5 @@
 """Tests for the analysis module — figure & table generation."""
+
 from __future__ import annotations
 
 import json

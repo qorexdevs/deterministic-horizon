@@ -10,12 +10,12 @@ from deterministic_horizon.tasks.base import BaseTask
 class PermutationTask(BaseTask):
     """
     Permutation puzzle task.
-    
+
     States are permutations of n elements. Operations include swaps,
     rotations, and reversals. Goal is to transform initial permutation
     to target permutation.
     """
-    
+
     def __init__(
         self,
         seed: int = 42,
@@ -23,7 +23,7 @@ class PermutationTask(BaseTask):
         operators: list[str] | None = None,
     ) -> None:
         super().__init__(seed=seed, n_elements=n_elements, operators=operators)
-        
+
         # Build operator functions
         self._operator_funcs = {
             "swap_01": lambda p: self._swap(p, 0, 1),
@@ -32,57 +32,55 @@ class PermutationTask(BaseTask):
             "swap_34": lambda p: self._swap(p, 3, 4),
             "swap_45": lambda p: self._swap(p, 4, 5),
             "swap_56": lambda p: self._swap(p, 5, 6),
-            "swap_67": lambda p: self._swap(p, 6, 7), 
+            "swap_67": lambda p: self._swap(p, 6, 7),
             "rotate_left": lambda p: p[1:] + [p[0]],
             "rotate_right": lambda p: [p[-1]] + p[:-1],
             "reverse": lambda p: p[::-1],
-            "reverse_first_half": lambda p: p[:len(p)//2][::-1] + p[len(p)//2:],
-            "reverse_second_half": lambda p: p[:len(p)//2] + p[len(p)//2:][::-1],
+            "reverse_first_half": lambda p: p[: len(p) // 2][::-1] + p[len(p) // 2 :],
+            "reverse_second_half": lambda p: p[: len(p) // 2] + p[len(p) // 2 :][::-1],
         }
-    
+
     def default_operators(self) -> list[str]:
         """Return default operators."""
         # Use swaps for adjacent pairs and rotations
-        ops = [
-            f"swap_{i}{i+1}" for i in range(self.n_elements - 1)
-        ]
+        ops = [f"swap_{i}{i+1}" for i in range(self.n_elements - 1)]
         ops.extend(["rotate_left", "rotate_right"])
         return ops
-    
+
     def initial_state(self) -> list[int]:
         """Generate identity permutation as initial state."""
         return list(range(self.n_elements))
-    
+
     def apply_operator(self, state: list[int], operator: str) -> list[int]:
         """Apply operator to permutation state."""
         state = list(state)  # Copy to avoid mutation
-        
+
         if operator in self._operator_funcs:
             return self._operator_funcs[operator](state)
-        
+
         # Try to parse swap operator
         swap_match = re.match(r"swap_(\d)(\d)", operator)
         if swap_match:
             i, j = int(swap_match.group(1)), int(swap_match.group(2))
             return self._swap(state, i, j)
-        
+
         raise ValueError(f"Unknown operator: {operator}")
-    
+
     def _swap(self, perm: list[int], i: int, j: int) -> list[int]:
         """Swap elements at positions i and j."""
         perm = list(perm)
         if i < len(perm) and j < len(perm):
             perm[i], perm[j] = perm[j], perm[i]
         return perm
-    
+
     def state_equal(self, state1: list[int], state2: list[int]) -> bool:
         """Check if two permutations are equal."""
         return list(state1) == list(state2)
-    
+
     def state_to_string(self, state: list[int]) -> str:
         """Convert permutation to string."""
         return "[" + ", ".join(map(str, state)) + "]"
-    
+
     def parse_state(self, text: str) -> list[int] | None:
         """Parse permutation from text."""
         # Try to find array pattern
@@ -95,14 +93,14 @@ class PermutationTask(BaseTask):
                 return [int(n) for n in numbers]
             except (ValueError, IndexError):
                 pass
-        
+
         # Try to find sequence of numbers
         numbers = re.findall(r"\b(\d)\b", text)
         if len(numbers) == self.n_elements:
             return [int(n) for n in numbers]
-        
+
         return None
-    
+
     def format_prompt(
         self,
         initial_state: list[int],
@@ -112,9 +110,9 @@ class PermutationTask(BaseTask):
         """Format task prompt for given condition."""
         state_str = self.state_to_string(initial_state)
         target_str = self.state_to_string(target_state)
-        
+
         ops_str = ", ".join(self.operators)
-        
+
         if condition == "C1":
             # Neural Chain-of-Thought
             system_prompt = """You are solving a permutation puzzle. Think through each step carefully, showing the state after each operation.
@@ -125,7 +123,7 @@ Available operations:
 - rotate_right: Move last element to start
 
 Show your work step by step, writing the state after each operation."""
-            
+
             user_prompt = f"""Transform the permutation from initial state to target state.
 
 Initial state: {state_str}
@@ -150,7 +148,7 @@ Output only the sequence of operations, one per line."""
             system_prompt = """You are solving a permutation puzzle with access to a verification tool.
 Use the tools to verify your state after each operation.
 The verify_state tool will tell you if your current state is correct."""
-            
+
             user_prompt = f"""Transform the permutation from initial state to target state.
 
 Initial state: {state_str}
@@ -167,7 +165,7 @@ Operations: {ops_str}"""
             # Fine-tuned format (detailed trace)
             system_prompt = """Solve the permutation puzzle step by step. 
 Always show the complete state after each operation in the format: State: [x, y, z, ...]"""
-            
+
             user_prompt = f"""Initial: {state_str}
 Target: {target_str}
 Operations: {ops_str}
@@ -176,9 +174,9 @@ Solve step by step, showing each state change."""
 
         else:
             raise ValueError(f"Unknown condition: {condition}")
-        
+
         return user_prompt, system_prompt
-    
+
     def bfs_solve(
         self,
         initial: list[int],
@@ -187,42 +185,44 @@ Solve step by step, showing each state change."""
     ) -> tuple[list[str], list[list[int]]] | None:
         """
         Solve using BFS to find optimal solution.
-        
+
         Returns:
             (operations, states) tuple or None if no solution within max_depth
         """
         initial = tuple(initial)
         target = tuple(target)
-        
+
         if initial == target:
             return [], [list(initial)]
-        
+
         # BFS
         queue = deque([(initial, [], [list(initial)])])
         visited = {initial}
-        
+
         while queue:
             state, ops, states = queue.popleft()
-            
+
             if len(ops) >= max_depth:
                 continue
-            
+
             for op in self.operators:
                 new_state = tuple(self.apply_operator(list(state), op))
-                
+
                 if new_state == target:
                     return ops + [op], states + [list(new_state)]
-                
+
                 if new_state not in visited:
                     visited.add(new_state)
-                    queue.append((
-                        new_state,
-                        ops + [op],
-                        states + [list(new_state)],
-                    ))
-        
+                    queue.append(
+                        (
+                            new_state,
+                            ops + [op],
+                            states + [list(new_state)],
+                        )
+                    )
+
         return None
-    
+
     def make_tool_session(
         self,
         initial_state: list[int],

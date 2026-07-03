@@ -1,4 +1,5 @@
 """Unit tests for the metrics package."""
+
 from __future__ import annotations
 
 import numpy as np

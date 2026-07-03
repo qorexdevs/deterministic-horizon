@@ -38,23 +38,23 @@ from typing import Literal
 
 MODEL_HORIZONS: dict[str, dict[str, float]] = {
     # OpenAI
-    "gpt-4o":            {"eps0": 0.022, "gamma": 0.0028, "d_star": 22.0},
-    "gpt-4o-mini":       {"eps0": 0.030, "gamma": 0.0040, "d_star": 19.0},
-    "o1":                {"eps0": 0.015, "gamma": 0.0020, "d_star": 28.0},
-    "o1-mini":           {"eps0": 0.018, "gamma": 0.0024, "d_star": 25.0},
-    "o3-mini":           {"eps0": 0.013, "gamma": 0.0018, "d_star": 31.0},
+    "gpt-4o": {"eps0": 0.022, "gamma": 0.0028, "d_star": 22.0},
+    "gpt-4o-mini": {"eps0": 0.030, "gamma": 0.0040, "d_star": 19.0},
+    "o1": {"eps0": 0.015, "gamma": 0.0020, "d_star": 28.0},
+    "o1-mini": {"eps0": 0.018, "gamma": 0.0024, "d_star": 25.0},
+    "o3-mini": {"eps0": 0.013, "gamma": 0.0018, "d_star": 31.0},
     # Anthropic
     "claude-3.5-sonnet": {"eps0": 0.020, "gamma": 0.0025, "d_star": 24.0},
     "claude-4.5-sonnet": {"eps0": 0.018, "gamma": 0.0022, "d_star": 26.0},
-    "claude-4.5-opus":   {"eps0": 0.015, "gamma": 0.0020, "d_star": 28.0},
+    "claude-4.5-opus": {"eps0": 0.015, "gamma": 0.0020, "d_star": 28.0},
     # DeepSeek
-    "deepseek-v3":       {"eps0": 0.024, "gamma": 0.0030, "d_star": 21.0},
-    "deepseek-r1":       {"eps0": 0.016, "gamma": 0.0021, "d_star": 27.0},
+    "deepseek-v3": {"eps0": 0.024, "gamma": 0.0030, "d_star": 21.0},
+    "deepseek-r1": {"eps0": 0.016, "gamma": 0.0021, "d_star": 27.0},
     # Open-weight
-    "llama-3.1-70b":     {"eps0": 0.028, "gamma": 0.0035, "d_star": 20.0},
-    "qwen-2.5-72b":      {"eps0": 0.026, "gamma": 0.0032, "d_star": 21.0},
+    "llama-3.1-70b": {"eps0": 0.028, "gamma": 0.0035, "d_star": 20.0},
+    "qwen-2.5-72b": {"eps0": 0.026, "gamma": 0.0032, "d_star": 21.0},
     # Sensible fallback — "average frontier model"
-    "default":           {"eps0": 0.020, "gamma": 0.0025, "d_star": 24.0},
+    "default": {"eps0": 0.020, "gamma": 0.0025, "d_star": 24.0},
 }
 
 # Empirical mean tool-integrated (C3) accuracy across models / domains (§5).

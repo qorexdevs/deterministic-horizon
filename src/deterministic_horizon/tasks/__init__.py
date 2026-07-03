@@ -22,26 +22,26 @@ def generate_instances(
 ) -> list[TaskInstance]:
     """
     Generate task instances.
-    
+
     Args:
         task: Task name (e.g., 'permutation', 'fsa', 'arithmetic')
         n_instances: Number of instances to generate
         depth_range: (min_depth, max_depth) tuple
         seed: Random seed for reproducibility
         **task_kwargs: Additional task-specific arguments
-        
+
     Returns:
         List of TaskInstance objects
     """
     task_lower = task.lower()
-    
+
     if task_lower not in TASK_REGISTRY:
         available = ", ".join(sorted(TASK_REGISTRY.keys()))
         raise ValueError(f"Unknown task: {task}. Available: {available}")
-    
+
     task_class = TASK_REGISTRY[task_lower]
     task_obj = task_class(seed=seed, **task_kwargs)
-    
+
     return task_obj.generate_instances(
         n_instances=n_instances,
         min_depth=depth_range[0],

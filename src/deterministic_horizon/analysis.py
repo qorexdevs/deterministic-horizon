@@ -138,8 +138,13 @@ def _plot_accuracy_decay(results, path, *, plt, dpi, title=None):
 
     # Tool-delegation reference (synthetic BFS = 100%, real models ≈ 94%)
     tool_acc = _tool_accuracy(results)
-    ax.axhline(tool_acc, color="#2a9d2a", linestyle="--", linewidth=1.8,
-               label=f"Tool-integrated (C3): {tool_acc:.0%}")
+    ax.axhline(
+        tool_acc,
+        color="#2a9d2a",
+        linestyle="--",
+        linewidth=1.8,
+        label=f"Tool-integrated (C3): {tool_acc:.0%}",
+    )
 
     # Deterministic horizon marker
     if "d_star" in horizon and horizon["d_star"] is not None:
