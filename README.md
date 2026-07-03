@@ -7,9 +7,9 @@
 [![Paper](https://img.shields.io/badge/paper-ICML%202026-b31b1b.svg)](paper/ICML2026_DeterministicHorizon_FINAL.pdf)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%E2%80%933.12-blue.svg)](https://www.python.org/downloads/)
-[![CI](https://github.com/deterministic-horizon/deterministic-horizon/actions/workflows/ci.yml/badge.svg)](.github/workflows/ci.yml)
+[![CI](https://github.com/qorexdevs/deterministic-horizon/actions/workflows/ci.yml/badge.svg)](.github/workflows/ci.yml)
 [![Code style: ruff](https://img.shields.io/badge/lint-ruff-46aef7.svg)](https://github.com/astral-sh/ruff)
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/deterministic-horizon/deterministic-horizon/blob/main/notebooks/01_quickstart.ipynb)
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/qorexdevs/deterministic-horizon/blob/main/notebooks/01_quickstart.ipynb)
 
 <img src="assets/figure_decay.png" alt="Accuracy decay vs reasoning depth" width="780"/>
 
@@ -65,7 +65,7 @@ Per-model horizons, when this *doesn't* apply, and three production routing patt
 ## 60-second offline demo (no API keys)
 
 ```bash
-git clone https://github.com/deterministic-horizon/deterministic-horizon
+git clone https://github.com/qorexdevs/deterministic-horizon
 cd deterministic-horizon
 pip install -e .
 python examples/demo.py            # offline horizon estimation
@@ -255,7 +255,7 @@ If you use this code or build on the ideas, please cite:
   author       = {Anonymous Authors},
   booktitle    = {Proceedings of the 43rd International Conference on Machine Learning (ICML)},
   year         = {2026},
-  url          = {https://github.com/deterministic-horizon/deterministic-horizon},
+  url          = {https://github.com/qorexdevs/deterministic-horizon},
 }
 ```
 
@@ -279,7 +279,7 @@ Bug reports, new tasks, and extensions welcome. See [`CONTRIBUTING.md`](CONTRIBU
 
 ## Star history
 
-[![Star History Chart](https://api.star-history.com/svg?repos=deterministic-horizon/deterministic-horizon&type=Date)](https://star-history.com/#deterministic-horizon/deterministic-horizon&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=qorexdevs/deterministic-horizon&type=Date)](https://star-history.com/#qorexdevs/deterministic-horizon&Date)
 
 ---
 
@@ -294,6 +294,6 @@ We thank the ICML reviewers and discussants. The fine-tuning experiments used co
 **Found this useful?** Star the repo and share with anyone shipping agentic systems.
 The Deterministic Horizon isn't a soft suggestion — it's a wall.
 
-[Paper](paper/ICML2026_DeterministicHorizon_FINAL.pdf) · [Docs](docs/README.md) · [When to delegate](docs/when-to-delegate.md) · [Quickstart notebook](notebooks/01_quickstart.ipynb) · [Issues](https://github.com/deterministic-horizon/deterministic-horizon/issues)
+[Paper](paper/ICML2026_DeterministicHorizon_FINAL.pdf) · [Docs](docs/README.md) · [When to delegate](docs/when-to-delegate.md) · [Quickstart notebook](notebooks/01_quickstart.ipynb) · [Issues](https://github.com/qorexdevs/deterministic-horizon/issues)
 
 </div>
