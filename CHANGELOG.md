@@ -3,6 +3,11 @@
 All notable changes to this project are documented in this file. This project
 adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+- Snapshot test pinning `MODEL_HORIZONS` to the paper's Table 3 values (#2)
+
 ## [1.0.0] — 2026-05-14
 
 Initial public release accompanying the ICML 2026 paper *"The Deterministic
