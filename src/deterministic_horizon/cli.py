@@ -14,6 +14,8 @@ from deterministic_horizon.metrics import (
 )
 from deterministic_horizon.models import MODEL_REGISTRY, load_model
 from deterministic_horizon.tasks import TASK_REGISTRY, generate_instances, load_task
+from deterministic_horizon.config import load_config
+from deterministic_horizon.training.finetune import run as run_finetune
 
 app = typer.Typer(
     name="deterministic-horizon",
@@ -248,16 +250,38 @@ def analyze(
 
     console.print(table)
 
-
 @app.command()
 def train(
     config: Path = typer.Option("configs/finetune.yaml", help="Config file"),
     output_dir: Path = typer.Option("checkpoints/", help="Output directory"),
 ) -> None:
     """Fine-tune a model on optimal-length traces (C5 condition)."""
-    console.print("[bold blue]Fine-tuning not yet implemented in CLI[/]")
-    console.print("Use the Python API: deterministic_horizon.training.finetune()")
-
+    # 1. Load the YAML configuration
+    cfg = load_config(config)
+    
+    # 2. Resolve parameters from the configuration
+    trace_dataset = cfg.dataset
+    base_model = cfg.model
+    lora_config = cfg.get("lora", None)
+    seeds = cfg.get("seeds", [42])
+    
+    # 3. Execute the fine-tuning run using the Rich progress machinery
+    with Progress(
+        SpinnerColumn(),
+        TextColumn("[progress.description]{task.description}"),
+        console=console,
+    ) as progress:
+        progress.add_task(description="Fine-tuning model...", total=None)
+        
+        run_finetune(
+            dataset=trace_dataset,
+            model=base_model,
+            lora=lora_config,
+            seeds=seeds,
+            output_dir=output_dir,
+        )
+        
+    console.print(f"[bold green]✓ Fine-tuning completed! Checkpoint saved under {output_dir}[/]")
 
 @app.command()
 def list_models() -> None:
