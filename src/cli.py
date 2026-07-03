@@ -4,15 +4,16 @@ import json
 from pathlib import Path
 
 import typer
+from rich.console import Console
+from rich.progress import Progress, SpinnerColumn, TextColumn
+from rich.table import Table
+
 from deterministic_horizon.metrics import (
     accuracy_by_depth,
     estimate_horizon,
 )
 from deterministic_horizon.models import MODEL_REGISTRY, load_model
 from deterministic_horizon.tasks import TASK_REGISTRY, generate_instances, load_task
-from rich.console import Console
-from rich.progress import Progress, SpinnerColumn, TextColumn
-from rich.table import Table
 
 app = typer.Typer(
     name="deterministic-horizon",
@@ -257,8 +258,43 @@ def train(
     output_dir: Path = typer.Option("checkpoints/", help="Output directory"),
 ) -> None:
     """Fine-tune a model on optimal-length traces (C5 condition)."""
-    console.print("[bold blue]Fine-tuning not yet implemented in CLI[/]")
-    console.print("Use the Python API: deterministic_horizon.training.finetune()")
+    try:
+        from deterministic_horizon.training.finetune import (
+            FinetuneConfig,
+            run_finetuning,
+        )
+    except ImportError as e:
+        console.print(
+            "[red]Training extras are not installed.[/] "
+            "Install them with: [bold]pip install 'deterministic-horizon[local]'[/]"
+        )
+        raise typer.Exit(1) from e
+
+    from dataclasses import fields
+
+    overrides: dict = {}
+    if config.exists():
+        import yaml
+
+        loaded = yaml.safe_load(config.read_text()) or {}
+        known = {f.name for f in fields(FinetuneConfig)}
+        unknown = set(loaded) - known
+        if unknown:
+            console.print(f"[yellow]Ignoring unknown config keys:[/] {', '.join(sorted(unknown))}")
+        overrides = {k: v for k, v in loaded.items() if k in known}
+    else:
+        console.print(f"[yellow]No config at {config}, using defaults.[/]")
+
+    overrides["output_dir"] = str(output_dir)
+    cfg = FinetuneConfig(**overrides)
+
+    console.print(f"[bold blue]Fine-tuning[/] {cfg.model_name} -> {cfg.output_dir}")
+    results = run_finetuning(cfg)
+
+    out = Path(cfg.output_dir) / "finetune_results.json"
+    console.print(f"[green]Done.[/] Results written to {out}")
+    for key, val in results.get("metrics", {}).items():
+        console.print(f"  {key}: {val}")
 
 
 @app.command()
