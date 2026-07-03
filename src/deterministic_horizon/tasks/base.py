@@ -1,11 +1,11 @@
 """Abstract base class for state-space search tasks."""
 
+import hashlib
+import json
+import random
 from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
 from typing import Any
-import random
-import hashlib
-import json
 
 
 @dataclass
@@ -405,12 +405,8 @@ class BaseTask(ABC):
             return 0.0, 0.0, 0.0
         
         # Get state sets
-        true_states = set(
-            self.state_to_string(s) for s in instance.intermediate_states
-        )
-        model_states = set(
-            self.state_to_string(s) for s, _ in model_trace
-        )
+        true_states = {self.state_to_string(s) for s in instance.intermediate_states}
+        model_states = {self.state_to_string(s) for s, _ in model_trace}
         
         # Compute metrics
         intersection = true_states & model_states

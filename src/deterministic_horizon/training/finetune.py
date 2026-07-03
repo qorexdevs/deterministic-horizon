@@ -14,17 +14,17 @@ from pathlib import Path
 from typing import Any
 
 import torch
-from torch.utils.data import DataLoader, Dataset
+from torch.utils.data import Dataset
 from transformers import (
     AutoModelForCausalLM,
     AutoTokenizer,
-    TrainingArguments,
-    Trainer,
     DataCollatorForLanguageModeling,
+    Trainer,
+    TrainingArguments,
 )
 
 try:
-    from peft import LoraConfig, get_peft_model, TaskType
+    from peft import LoraConfig, TaskType, get_peft_model
     PEFT_AVAILABLE = True
 except ImportError:
     PEFT_AVAILABLE = False
@@ -202,7 +202,8 @@ def prepare_finetune_dataset(
                 (op, state)
                 for op, state in zip(
                     inst.get("optimal_solution", []),
-                    inst.get("intermediate_states", [])
+                    inst.get("intermediate_states", []),
+                    strict=False,
                 )
             ],
             "depth": inst.get("depth", len(inst.get("optimal_solution", []))),
@@ -350,9 +351,9 @@ class FinetuneTrainer:
     def _wandb_available(self) -> bool:
         """Check if wandb is available."""
         try:
-            import wandb
-            return True
-        except ImportError:
+            import importlib.util
+            return importlib.util.find_spec("wandb") is not None
+        except Exception:
             return False
 
 

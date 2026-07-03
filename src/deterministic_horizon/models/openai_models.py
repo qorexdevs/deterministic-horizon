@@ -19,7 +19,7 @@ class OpenAIModel(BaseModel):
         try:
             from openai import OpenAI
         except ImportError:
-            raise ImportError("openai package required. Install with: pip install openai")
+            raise ImportError("openai package required. Install with: pip install openai") from None
         
         api_key = os.getenv("OPENAI_API_KEY")
         if not api_key:

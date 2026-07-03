@@ -1,24 +1,19 @@
 """Command-line interface for Deterministic Horizon experiments."""
 
 import json
-import sys
 from pathlib import Path
-from typing import Optional
 
 import typer
 from rich.console import Console
 from rich.progress import Progress, SpinnerColumn, TextColumn
 from rich.table import Table
 
-from deterministic_horizon.config import load_config, save_config, Config
-from deterministic_horizon.tasks import generate_instances, load_task, TASK_REGISTRY
-from deterministic_horizon.models import load_model, MODEL_REGISTRY
 from deterministic_horizon.metrics import (
     accuracy_by_depth,
     estimate_horizon,
-    compute_ssj,
-    compute_sfe,
 )
+from deterministic_horizon.models import MODEL_REGISTRY, load_model
+from deterministic_horizon.tasks import TASK_REGISTRY, generate_instances, load_task
 
 app = typer.Typer(
     name="deterministic-horizon",
@@ -90,7 +85,7 @@ def evaluate(
     conditions: str = typer.Option("C1,C3", help="Comma-separated conditions"),
     output: Path = typer.Option(..., help="Output file path"),
     batch_size: int = typer.Option(50, help="Batch size"),
-    max_instances: Optional[int] = typer.Option(None, help="Max instances to evaluate"),
+    max_instances: int | None = typer.Option(None, help="Max instances to evaluate"),
 ) -> None:
     """Evaluate a model on task instances."""
     from deterministic_horizon.tasks.base import TaskInstance
@@ -114,8 +109,8 @@ def evaluate(
         model_obj = load_model(model, temperature=0.0)
     except Exception as e:
         console.print(f"[red]Failed to load model: {e}[/]")
-        raise typer.Exit(1)
-    
+        raise typer.Exit(1) from None
+
     # Load task for evaluation
     task_name = task_instances[0].task_name if task_instances else "permutation"
     task_obj = load_task(task_name)
@@ -210,7 +205,7 @@ def analyze(
     horizon = estimate_horizon(result_data, threshold=0.5)
     metrics["horizon"] = horizon
     
-    console.print(f"\n[bold]Deterministic Horizon (d*):[/]")
+    console.print("\n[bold]Deterministic Horizon (d*):[/]")
     console.print(f"  d* = {horizon['d_star']:.1f}")
     if "d_star_ci_low" in horizon:
         console.print(f"  95% CI: [{horizon['d_star_ci_low']:.1f}, {horizon['d_star_ci_high']:.1f}]")

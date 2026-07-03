@@ -13,16 +13,15 @@ from __future__ import annotations
 
 import json
 import logging
-import math
+from collections.abc import Mapping, Sequence
 from pathlib import Path
-from typing import Any, Iterable, Mapping, Sequence
+from typing import Any
 
 import numpy as np
 
 from deterministic_horizon.metrics import (
     accuracy_by_depth,
     estimate_horizon,
-    fit_decoherence_model,
 )
 
 log = logging.getLogger(__name__)
@@ -238,7 +237,7 @@ def _plot_condition_comparison(results, path, *, plt, dpi):
 
     fig, ax = plt.subplots(figsize=(6.5, 4.0))
     bars = ax.bar(conds, acc, color=colors)
-    for b, v in zip(bars, acc):
+    for b, v in zip(bars, acc, strict=False):
         ax.text(b.get_x() + b.get_width() / 2, v + 1.2, f"{v:.1f}%", ha="center", fontsize=10)
     ax.set_ylim(0, 105)
     ax.set_ylabel("Accuracy (%)")

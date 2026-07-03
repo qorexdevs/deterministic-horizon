@@ -1,8 +1,8 @@
 """Multi-step arithmetic task implementation."""
 
 import re
-from typing import Any
 from fractions import Fraction
+from typing import Any
 
 from deterministic_horizon.tasks.base import BaseTask
 
@@ -65,10 +65,7 @@ class ArithmeticTask(BaseTask):
         elif op_type == "div":
             if operand == 0:
                 return state
-            if self.use_fractions:
-                result = state / operand
-            else:
-                result = state // operand
+            result = state / operand if self.use_fractions else state // operand
         else:
             raise ValueError(f"Unknown operation type: {op_type}")
         

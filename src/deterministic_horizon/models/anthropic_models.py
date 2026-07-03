@@ -1,6 +1,5 @@
 """Anthropic model implementations (Claude models)."""
 
-import json
 import os
 from typing import Any
 
@@ -20,7 +19,7 @@ class AnthropicModel(BaseModel):
         try:
             from anthropic import Anthropic
         except ImportError:
-            raise ImportError("anthropic package required. Install with: pip install anthropic")
+            raise ImportError("anthropic package required. Install with: pip install anthropic") from None
         
         api_key = os.getenv("ANTHROPIC_API_KEY")
         if not api_key:

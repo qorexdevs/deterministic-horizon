@@ -1,6 +1,5 @@
 """Local model implementations (Llama, Qwen, etc.)."""
 
-import time
 from typing import Any
 
 try:  # heavy optional dependency
@@ -64,7 +63,7 @@ class LocalModel(BaseModel):
         try:
             from vllm import LLM, SamplingParams
         except ImportError:
-            raise ImportError("vllm package required. Install with: pip install vllm")
+            raise ImportError("vllm package required. Install with: pip install vllm") from None
         
         model_id = self._get_model_id()
         
@@ -83,7 +82,7 @@ class LocalModel(BaseModel):
         except ImportError:
             raise ImportError(
                 "transformers package required. Install with: pip install transformers"
-            )
+            ) from None
         
         model_id = self._get_model_id()
         

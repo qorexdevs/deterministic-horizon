@@ -1,7 +1,8 @@
 """State-Space Jaccard (SSJ) metric implementation."""
 
+from collections.abc import Callable, Sequence
 from dataclasses import dataclass
-from typing import Any, Callable, Sequence
+from typing import Any
 
 
 @dataclass
@@ -71,8 +72,8 @@ def compute_ssj(
         state_to_str = str
     
     # Convert to sets of string representations
-    true_set = set(state_to_str(s) for s in true_states)
-    model_set = set(state_to_str(s) for s in model_states)
+    true_set = {state_to_str(s) for s in true_states}
+    model_set = {state_to_str(s) for s in model_states}
     
     # Handle empty sets
     if not true_set and not model_set:

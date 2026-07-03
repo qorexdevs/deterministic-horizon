@@ -1,7 +1,8 @@
 """Statistical utilities for Deterministic Horizon analysis."""
 
 from collections import defaultdict
-from typing import Any, Sequence
+from collections.abc import Sequence
+from typing import Any
 
 import numpy as np
 from scipy import stats
@@ -162,9 +163,9 @@ def estimate_horizon(
             "threshold": threshold,
         }
         
-    except (RuntimeError, ValueError) as e:
+    except (RuntimeError, ValueError):
         # Fallback: simple interpolation
-        for i, (d, acc) in enumerate(zip(depths, accuracies)):
+        for i, (d, acc) in enumerate(zip(depths, accuracies, strict=False)):
             if acc < threshold:
                 if i > 0:
                     # Linear interpolation

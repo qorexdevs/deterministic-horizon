@@ -1,7 +1,8 @@
 """Step-to-First-Error (SFE) metric implementation."""
 
+from collections.abc import Callable, Sequence
 from dataclasses import dataclass
-from typing import Any, Callable, Sequence
+from typing import Any
 
 
 @dataclass
@@ -63,8 +64,11 @@ def compute_sfe(
         
         If s_i^model = s_i^true for all i, SFE = None (no error)
     """
+    def _default_equal(a, b):
+        return a == b
+
     if state_equal is None:
-        state_equal = lambda a, b: a == b
+        state_equal = _default_equal
     
     total_steps = max(len(true_states), len(model_states))
     
@@ -155,6 +159,7 @@ def sfe_by_depth(
         Dictionary mapping depth to SFE statistics
     """
     from collections import defaultdict
+
     import numpy as np
     
     # Group by depth

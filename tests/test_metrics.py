@@ -79,7 +79,7 @@ def test_horizon_drops_below_threshold():
     eps0, gamma = 0.018, 0.0025
     accs = np.exp(-eps0 * depths - gamma * depths * (depths + 1) / 2)
     results = []
-    for d, a in zip(depths.tolist(), accs.tolist()):
+    for d, a in zip(depths.tolist(), accs.tolist(), strict=True):
         # 40 instances per depth, accuracy = a
         n_correct = int(round(a * 40))
         for _ in range(n_correct):
